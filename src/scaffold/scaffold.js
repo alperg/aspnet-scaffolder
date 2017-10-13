@@ -25,7 +25,7 @@ else {
 
 // Ensure appropriate directory structure exists.
 // For views, we must have ./Views/${model_name}.
-[CONTROLLERS, MODELS].forEach((dir) => {
+[CONTROLLERS, MODELS, VIEWS].forEach((dir) => {
   fse.ensureDir(`${process.cwd()}/${dir}`, (err) => {
     console.log(err);
   });
