@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const fse = require('fs-extra'),
       controller = require('../heredocs/controller.js'),
       model = require('../heredocs/model.js'),
