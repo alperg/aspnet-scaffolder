@@ -11,7 +11,7 @@ const fse = require('fs-extra'),
               require('../heredocs/views/index.js')],
       substitute = require('./substitute.js');
 
-const pj = require('./package.json');
+const pj = require('./package');
 
 const CONTROLLERS = "Controllers",
       MODELS = "Models",
