@@ -28,30 +28,34 @@ else {
 [CONTROLLERS, MODELS, VIEWS].forEach((dir) => {
   fse.ensureDir(`${process.cwd()}/${dir}`, (err) => {
     console.log(err);
+
+    fse.ensureDir(`${process.cwd()}/${VIEWS}/${model_name}`, (err) => {
+      console.log(err);
+
+      /* **************************************************************** */
+      // Create Model
+      fse.writeFile(`${process.cwd()}/${MODELS}/${model_name}.cs`, substitute.model(model.model, model_name, "${CLASS}"), 'utf-8', (err) => {
+        if (err) console.log(err);
+        console.log(`Created ${MODELS}/${model_name}.cs.`);
+      });
+
+      // With model name, create controller
+      fse.writeFile(`${process.cwd()}/${CONTROLLERS}/${model_name}Controller.cs`, substitute.controller(controller.controller, model_name), 'utf-8', (err) => {
+        if (err) console.log(err);
+        console.log(`Created ${CONTROLLERS}/${model_name}Controller.`);
+      });
+
+      // Create views
+      views.forEach((view) => {
+        fse.writeFile(`${process.cwd()}/${VIEWS}/${model_name}/${view.name}`, substitute.view(view.template, model_name), 'utf-8', (err) => {
+          if (err) console.log(err);
+          console.log(`Created ${VIEWS}/${model_name}/${view.name}.`);
+        });
+      });
+    });
   });
 });
 
-fse.ensureDir(`${process.cwd()}/${VIEWS}/${model_name}`, (err) => {
-  console.log(err);
-});
 
-/* **************************************************************** */
-// Create Model
-fse.writeFile(`${process.cwd()}/${MODELS}/${model_name}.cs`, substitute.model(model.model, model_name, "${CLASS}"), 'utf-8', (err) => {
-    if (err) console.log(err);
-    console.log(`Created ${MODELS}/${model_name}.cs.`);
-});
 
-// With model name, create controller
-fse.writeFile(`${process.cwd()}/${CONTROLLERS}/${model_name}Controller.cs`, substitute.controller(controller.controller, model_name), 'utf-8', (err) => {
-  if (err) console.log(err);
-  console.log(`Created ${CONTROLLERS}/${model_name}Controller.`);
-});
 
-// Create views
-views.forEach((view) => {
-  fse.writeFile(`${process.cwd()}/${VIEWS}/${model_name}/${view.name}`, substitute.view(view.template, model_name), 'utf-8', (err) => {
-    if (err) console.log(err);
-    console.log(`Created ${VIEWS}/${model_name}/${view.name}.`);
-  });
-});
