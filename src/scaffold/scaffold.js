@@ -34,12 +34,12 @@ console.log(figlet.textSync(process.title, {
 
 // Ensure appropriate directory structure exists.
 // For views, we must have ./Views/${model_name}.
-[CONTROLLERS, MODELS, VIEWS].forEach((dir) => {
+[CONTROLLERS, MODELS].forEach((dir) => {
   fse.ensureDir(`${process.cwd()}/${dir}`, (err) => {
-    console.log(err);
+    if (err) console.log(err);
 
     fse.ensureDir(`${process.cwd()}/${VIEWS}/${model_name}`, (err) => {
-      console.log(err);
+      if (err) console.log(err);
 
       /* **************************************************************** */
       // Create Model
@@ -61,6 +61,7 @@ console.log(figlet.textSync(process.title, {
           console.log(`Created ${VIEWS}/${model_name}/${view.name}.`);
         });
       });
+      console.log('All done!');
     });
   });
 });
