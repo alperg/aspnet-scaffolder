@@ -11,10 +11,10 @@ const fse = require('fs-extra'),
               require('../heredocs/views/index.js')],
       substitute = require('./substitute.js');
 
-const version = require('../../package.json').version,
-      CONTROLLERS = "Controllers",
+const CONTROLLERS = "Controllers",
       MODELS = "Models",
-      VIEWS = "Views";
+      VIEWS = "Views",
+      version = require('../../package.json').version;
 
 let model_name;
 if (!process.argv[2]) {
@@ -31,7 +31,7 @@ console.log(figlet.textSync(process.title, {
   font: 'Big',
   horizontalLayout: 'fitted',
   verticalLayout: 'Default'
-}), '\nASP.NET Scaffolding Tool v' + version + '\n')
+}), '\nASP.NET Scaffolding Tool v' + version + '\n');
 
 // Ensure appropriate directory structure exists.
 // For views, we must have ./Views/${model_name}.
