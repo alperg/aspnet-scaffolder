@@ -1,7 +1,6 @@
 # aspnet-scaffolder
 ### Lightweight ASP.NET Model &amp; View &amp; Controller scaffolding tool
 
-
 ## Installation:
 
 Install the package globally:
@@ -12,22 +11,22 @@ Install the package globally:
 
 Call the script with the name of your model:
 
-`aspnet-scaffolder Book`
+`aspnet-scaffolder Person`
 
-This tool does verify that your model doesn't exist before creating it, so don't overwrite accidentally!
+This tool doesn't verify that your model doesn't exist before creating it, so don't overwrite accidentally!
 
 The output will be:
 
 ```
 -Models
-----Book.cs
+----Person.cs
 -Views
-----Book
+----Person
 --------Create.cshtml
 --------Delete.cshtml
 --------Details.cshtml
 --------Edit.cshtml
 --------Index.cshtml
 -Controllers
-----BookController.cs
+----PersonController.cs
 ```

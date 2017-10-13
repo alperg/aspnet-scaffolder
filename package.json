@@ -1,10 +1,10 @@
 {
   "name": "aspnet-scaffolder",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "Lightweight ASP.NET Model&View&Controller scaffolder.",
   "author": "Alper Gokcehan <mail@alperg.com> (http://alperg.com)",
   "license": "MIT",
-  "main": "src/scaffold/scaffold.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/alperg/aspnet-scaffolder.git"
@@ -15,7 +15,7 @@
   },
   "preferGlobal": true,
   "bin": {
-    "aspnet-scaffolder": "src/scaffold/scaffold.js"
+    "aspnet-scaffolder": "index.js"
   },
   "dependencies": {
     "figlet": "^1.2.0",
