@@ -11,7 +11,7 @@ const fse = require('fs-extra'),
               require('../heredocs/views/index.js')],
       substitute = require('./substitute.js');
 
-const pj = require('./package');
+const version = require('../../package.json').version;
 
 const CONTROLLERS = "Controllers",
       MODELS = "Models",
@@ -32,7 +32,7 @@ console.log(figlet.textSync(process.title, {
   font: 'Big',
   horizontalLayout: 'fitted',
   verticalLayout: 'Default'
-}), '\nASP.NET Scaffolding Tool v' + pj.version + '\n')
+}), '\nASP.NET Scaffolding Tool v' + version + '\n')
 
 // Ensure appropriate directory structure exists.
 // For views, we must have ./Views/${model_name}.
