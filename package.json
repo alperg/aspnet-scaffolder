@@ -1,6 +1,6 @@
 {
   "name": "aspnet-scaffolder",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Lightweight ASP.NET Model & Controller and View scaffolder.",
   "author": "Alper Gokcehan <mail@alperg.com> (http://alperg.com)",
   "license": "MIT",
