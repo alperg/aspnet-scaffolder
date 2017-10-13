@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 const fse = require('fs-extra'),
+      figlet = require('figlet'),
       controller = require('../heredocs/controller.js'),
       model = require('../heredocs/model.js'),
       views = [require('../heredocs/views/create.js'),
@@ -9,6 +10,8 @@ const fse = require('fs-extra'),
               require('../heredocs/views/delete.js'),
               require('../heredocs/views/index.js')],
       substitute = require('./substitute.js');
+
+const pj = require('./package.json');
 
 const CONTROLLERS = "Controllers",
       MODELS = "Models",
@@ -22,6 +25,14 @@ if (!process.argv[2]) {
 else {
   model_name = process.argv[2];
 }
+
+process.title = "aspnet-scaffolder";
+
+console.log(figlet.textSync(process.title, {
+  font: 'Big',
+  horizontalLayout: 'fitted',
+  verticalLayout: 'Default'
+}), '\nASP.NET Scaffolding Tool v' + pj.version + '\n')
 
 // Ensure appropriate directory structure exists.
 // For views, we must have ./Views/${model_name}.
