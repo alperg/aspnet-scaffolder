@@ -1,6 +1,6 @@
 {
   "name": "aspnet-scaffolder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight ASP.NET Model & Controller and View scaffolder.",
   "main": "src/scaffold/scaffold.js",
   "repository": {
