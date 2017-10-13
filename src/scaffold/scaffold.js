@@ -13,8 +13,7 @@ const fse = require('fs-extra'),
 
 const CONTROLLERS = "Controllers",
       MODELS = "Models",
-      VIEWS = "Views",
-      version = require('../../package.json').version;
+      VIEWS = "Views";
 
 let model_name;
 if (!process.argv[2]) {
@@ -31,7 +30,7 @@ console.log(figlet.textSync(process.title, {
   font: 'Big',
   horizontalLayout: 'fitted',
   verticalLayout: 'Default'
-}), '\nASP.NET Scaffolding Tool v' + version + '\n');
+}), '\nASP.NET MVC Scaffolding Tool\n');
 
 // Ensure appropriate directory structure exists.
 // For views, we must have ./Views/${model_name}.
