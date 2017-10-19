@@ -13,7 +13,7 @@ Call the script with the name of your model:
 
 `aspnet-scaffolder Person`
 
-This tool doesn't verify that your model doesn't exist before creating it, so don't overwrite accidentally!
+This tool doesn't verify that your model exists before creating it, so don't overwrite accidentally!
 
 The output will be:
 
