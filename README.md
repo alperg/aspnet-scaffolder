@@ -1,6 +1,8 @@
 # aspnet-scaffolder
 ### Lightweight ASP.NET Model &amp; View &amp; Controller scaffolding tool
 
+NPM link: https://www.npmjs.com/package/aspnet-scaffolder
+
 ## Installation:
 
 Install the package globally:
